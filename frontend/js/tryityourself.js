@@ -26,30 +26,30 @@ function captureImage() {
     context.drawImage(video, 0, 0, canvas.width, canvas.height);
 
     // Convert canvas to a Blob object instead of a data URL
-    canvas.toBlob(function(blob) {
+    canvas.toBlob(function (blob) {
         // Create a FormData object to send the Blob in a POST request
         var formData = new FormData();
         formData.append('file', blob, 'captured.png');
 
         // Send the image to the Flask backend using fetch
-        fetch('https://9879-79-118-187-217.ngrok-free.app/upload', { // Replace with your ngrok URL
+        fetch('https://6fc1-79-118-187-217.ngrok-free.app/upload', { // Replace with your ngrok URL
             method: 'POST',
             body: formData
         })
-        .then(response => response.blob())
-        .then(processedBlob => {
-            // Create a URL for the processed image and display it
-            var processedImageURL = URL.createObjectURL(processedBlob);
-            var capturedImageContainer = document.getElementById('capturedImageContainer');
-            var imgElement = document.createElement('img');
-            imgElement.src = processedImageURL;
+            .then(response => response.blob())
+            .then(processedBlob => {
+                // Create a URL for the processed image and display it
+                var processedImageURL = URL.createObjectURL(processedBlob);
+                var capturedImageContainer = document.getElementById('capturedImageContainer');
+                var imgElement = document.createElement('img');
+                imgElement.src = processedImageURL;
 
-            capturedImageContainer.innerHTML = ''; // Clear the container
-            capturedImageContainer.appendChild(imgElement); // Append the new processed imgElement
-        })
-        .catch(error => {
-            console.error('Error uploading image:', error);
-        });
+                capturedImageContainer.innerHTML = ''; // Clear the container
+                capturedImageContainer.appendChild(imgElement); // Append the new processed imgElement
+            })
+            .catch(error => {
+                console.error('Error uploading image:', error);
+            });
     }, 'image/png'); // The type of the image to be created by toBlob
 }
 
