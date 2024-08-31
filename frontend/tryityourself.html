@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Connect Four Try It Yourself</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/tryityourself.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body class ="fade-in">
+
+    <div class="links">
+        <nav>
+
+            <a href="homepage.html">Home</a>
+            <a href="tryityourself.html">Try it yourself</a>
+        </nav>
+    </div>
+
+    <div class="homepage">
+
+        <section>
+            <div class="title_text">
+                <h1>Start playing!</h1>
+            </div>
+
+            <div class="subtitle_text">
+                <h1>Click the button below to take a picture of your board and get your results</h1>
+            </div>
+
+            <div class="camera-container">
+                <video id="cameraFeed" autoplay></video>
+                <canvas id="canvas"></canvas>
+                <button id="capture_image_button" onclick="captureImage()">Capture</button>
+            </div>
+
+            <button class="camera_button" id="open_camera_button" onclick="openCamera()"> <i class="fas fa-camera"> </i>
+            </button>
+
+            <div id="capturedImageContainer"></div>
+
+        </section>
+
+    </div>
+
+    <div class="footer">
+        <p>&copy; Rotaru Iulia-Maria - 2024</p>
+    </div>
+</body>
+
+
+</html>
