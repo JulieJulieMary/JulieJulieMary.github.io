@@ -33,7 +33,7 @@ function captureImage() {
         formData.append('file', blob, 'captured.png');
 
         // Send the image to the Flask backend using fetch
-        fetch('https://6fc1-79-118-187-217.ngrok-free.app/upload', {  // Use your updated ngrok URL
+        fetch('https://33c7-79-118-187-217.ngrok-free.app/upload', {  // Use your updated ngrok URL
             method: 'POST',
             body: formData
         })
