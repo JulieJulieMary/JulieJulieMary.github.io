@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
 
 <head>
@@ -13,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
-<body class ="fade-in">
+<body class="fade-in">
 
     <div class="links">
         <nav>
@@ -30,19 +29,25 @@
             </div>
 
             <div class="subtitle_text">
-                <h1>Click the button below to take a picture of your board and get your results</h1>
+                <h1>You play with red, the bot will play with yellow</h1>
+            </div>
+
+            <div class="subtitle_text">
+                <h1>Click the button below to take a picture of your board to get the bot's move</h1>
             </div>
 
             <div class="camera-container">
                 <video id="cameraFeed" autoplay></video>
                 <canvas id="canvas"></canvas>
-                <button id="capture_image_button" onclick="captureImage()">Capture</button>
+                <button id="capture_image_button" class="capture_image_button" onclick="captureImage()">Capture</button>
             </div>
+            
 
-            <button class="camera_button" id="open_camera_button" onclick="openCamera()"> <i class="fas fa-camera"> </i>
+            <button class="camera_button" id="open_camera_button" onclick="openCamera()"> 
+                <i class="fas fa-camera"> </i>
             </button>
 
-            <div id="capturedImageContainer"></div>
+            <div id="outputContainer"></div>
 
         </section>
 
@@ -52,6 +57,5 @@
         <p>&copy; Rotaru Iulia-Maria - 2024</p>
     </div>
 </body>
-
 
 </html>

@@ -25,7 +25,8 @@ body.fade-in * {
 .subtitle_text,
 .title_text,
 .try_button,
-.camera_button {
+.camera_button,
+#outputContainer {
     color: white;
     font-family: "Work Sans SemiBold", sans-serif;
     text-shadow: 2px 2px 4px rgba(24, 20, 23, 0.5);
@@ -40,7 +41,8 @@ body.fade-in * {
     text-align: left;
 }
 
-.subtitle_text {
+.subtitle_text,
+#outputContainer {
     font-size: 20px;
     text-align: left;
 }
@@ -108,7 +110,7 @@ body.fade-in::before {
     margin-right: 10px;
     font-family: "Futura", sans-serif;
 
-    transition: background-color 0.5s ease;
+    /* transition: background-color 0.5s ease; */
 }
 
 .links nav a:hover {
@@ -131,8 +133,10 @@ body.fade-in::before {
 }
 
 .try_button,
-.camera_button {
+.camera_button,
+.capture_image_button {
     background-color: rgb(255, 124, 17);
+    color: #ffffff;
     font-size: 20px;
     width: 150px;
     height: 80px;
@@ -142,11 +146,12 @@ body.fade-in::before {
     border: 1px solid white;
     box-shadow: 2px 2px 4px rgba(24, 20, 23, 0.5);
 
-    transition: background-color 0.5s ease, border-radius 0.5s ease;
+    /* transition: background-color 0.5s ease, border-radius 0.5s ease; */
 }
 
 .try_button:hover,
-.camera_button:hover {
+.camera_button:hover,
+.capture_image_button:hover {
     background-color: rgb(255, 154, 87);
     border-radius: 35px;
     cursor: pointer;
@@ -154,7 +159,8 @@ body.fade-in::before {
 
 /* TRY IT YOURSELF */
 
-.camera_button {
+.camera_button,
+.capture_image_button {
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -167,29 +173,39 @@ body.fade-in::before {
     font-size: 30px;
 }
 
-.camera-container {
-    background-color: salmon;
-    position: absolute;
-    top: 20%;
-    /* transform: translateY(-50%); */
-    right: 200px;
-    height: 400px;
-    width: 530px;
-    border-radius: 25px;
-}
-
 .camera-container canvas {
     display: none;
 }
 
-.camera-container button {
+
+.camera-container {
+    background-color: rgb(250, 128, 114);
     position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 15%;
+    right: 200px;
+    height: 400px;
+    width: 530px;
+    border-radius: 25px;
+    display: flex;
+    /* Added */
+    flex-direction: column;
+    /* Added */
+    align-items: center;
+    /* Center items horizontally */
+    justify-content: center;
+    /* Center items vertically */
+}
+
+.camera-container button {
+    position: relative;
+    /* Changed from absolute to relative */
+    margin-top: 20px;
+    /* Adds space between the canvas and the button */
     z-index: 1;
     display: none;
+    /* Ensure the button is displayed */
 }
+
 
 #cameraFeed {
     max-width: 100%;
@@ -221,4 +237,13 @@ body.fade-in::before {
         display: flex;
         flex-direction: column;
     }
+}
+
+#outputContainer {
+    /* background-color: rgb(250, 128, 114); */
+    position:fixed;
+    border-radius: 25px;
+    bottom: 5%;
+    right: 13%
+    /* height: 100vh; */
 }
