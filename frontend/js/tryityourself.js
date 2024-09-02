@@ -48,7 +48,7 @@ function captureImage() {
         formData.append('file', blob, 'captured.png');
 
         // Send the image to the Flask backend using fetch
-        fetch('https://2631-79-118-187-217.ngrok-free.app/upload', {
+        fetch('https://frequently-guiding-kitten.ngrok-free.app/upload', {
             method: 'POST',
             body: formData
         })
@@ -68,9 +68,9 @@ function captureImage() {
                 outputContainer.innerHTML = ''; // Clear the container
 
                 var firstMoveElement = document.createElement('p');
-                firstMoveElement.textContent = 'I will play here: ' + (firstMove+1);
+                firstMoveElement.textContent = 'I will play here: ' + (firstMove + 1);
                 outputContainer.appendChild(firstMoveElement);
-                
+
                 // Create a visual representation of the Connect Four board
                 var boardContainer = document.createElement('div');
                 boardContainer.style.display = 'grid';
