@@ -110,7 +110,7 @@ body.fade-in::before {
     margin-right: 10px;
     font-family: "Futura", sans-serif;
 
-    /* transition: background-color 0.5s ease; */
+    transition: background-color 0.5s ease;
 }
 
 .links nav a:hover {
@@ -146,7 +146,7 @@ body.fade-in::before {
     border: 1px solid white;
     box-shadow: 2px 2px 4px rgba(24, 20, 23, 0.5);
 
-    /* transition: background-color 0.5s ease, border-radius 0.5s ease; */
+    transition: background-color 0.5s ease, border-radius 0.5s ease;
 }
 
 .try_button:hover,
@@ -241,9 +241,9 @@ body.fade-in::before {
 
 #outputContainer {
     /* background-color: rgb(250, 128, 114); */
-    position:fixed;
+    position: fixed;
     border-radius: 25px;
     bottom: 5%;
     right: 13%
-    /* height: 100vh; */
+        /* height: 100vh; */
 }
